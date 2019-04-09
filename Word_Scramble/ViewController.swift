@@ -15,7 +15,17 @@ class ViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        if let startWordURL = Bundle.main.url(forResource: "start", withExtension: "txt") {
+            if let startWords = try? String(contentsOf: startWordURL) {
+                allWords = startWords.components(separatedBy: "\n")
+            }
+        }
+        
+        if allWords.isEmpty {
+            allWords = ["silkworm"]
+        }
+        
     }
 
 
