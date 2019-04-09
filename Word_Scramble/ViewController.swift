@@ -9,7 +9,10 @@
 import UIKit
 
 class ViewController: UITableViewController {
-
+    //Properties
+    var allWords = [String]()
+    var usedWord = [String]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
