@@ -48,7 +48,7 @@ class ViewController: UITableViewController {
         return cell
     }
     
-    @objc func promptForAswer() {
+    @objc func promptForAnswer() {
         let ac = UIAlertController(title: "Enter answer", message: nil, preferredStyle: .alert)
         ac.addTextField()
         
@@ -65,6 +65,11 @@ class ViewController: UITableViewController {
     func submit(_ answer: String) {
         
     }
+    
+    func isPossible(word: String) -> Bool {
+        return true
+    }
+    
     
 }
 
