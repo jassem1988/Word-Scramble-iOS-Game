@@ -70,6 +70,12 @@ class ViewController: UITableViewController {
         return true
     }
     
+    func isOriginal(word: String) -> Bool {
+        return true
+    }
     
+    func isReal(word: String) -> Bool {
+        return true 
+    }
 }
 
