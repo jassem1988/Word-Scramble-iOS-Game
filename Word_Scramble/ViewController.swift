@@ -96,7 +96,10 @@ class ViewController: UITableViewController {
     }
     
     func isReal(word: String) -> Bool {
-        return true
+        let checker = UITextChecker()
+        let range = NSRange(location: 0, length: word.utf16.count) //utf16 used from  objc lang
+        let missplledRange = checker.rangeOfMisspelledWord(in: word, range: range, startingAt: 0, wrap: false, language: "en")
+        return missplledRange.location == NSNotFound
     }
 }
 
