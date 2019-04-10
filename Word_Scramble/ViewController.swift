@@ -86,8 +86,10 @@ class ViewController: UITableViewController {
                 errorMessage = "Be more original!"
             }
         } else {
+            guard let title = title else { return }
+            
             errorTitle = "Word not possible!"
-            errorMessage = "You can't spell that word from \(title!.lowercased())"
+            errorMessage = "You can't spell that word from \(title.lowercased())"
         }
         
         let ac = UIAlertController(title: errorTitle, message: errorMessage, preferredStyle: .alert)
