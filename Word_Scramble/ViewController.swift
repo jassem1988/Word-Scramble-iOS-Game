@@ -32,7 +32,6 @@ class ViewController: UITableViewController {
         
         startGame()
     }
-
     
     @objc func startGame() {
         title = allWords.randomElement()
@@ -56,7 +55,7 @@ class ViewController: UITableViewController {
         
         let submitAction = UIAlertAction(title: "Submit", style: .default) {
             [weak self, weak ac] _ in
-            guard let answer = ac?.textFields?[0].text else { return }
+            guard let answer = ac?.textFields?[0].text?.lowercased() else { return }
             self?.submit(answer)
         }
         
@@ -93,7 +92,7 @@ class ViewController: UITableViewController {
                         showErrorMessage(errorTitle, errorMessage)
                     }
                 } else {
-                    errorTitle = "Word not recognizeds!"
+                    errorTitle = "Word not recognized!"
                     errorMessage = "You can't just make them up, you know!"
                     showErrorMessage(errorTitle, errorMessage)
                 }
