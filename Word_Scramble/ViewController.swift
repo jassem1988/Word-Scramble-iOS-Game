@@ -89,6 +89,9 @@ class ViewController: UITableViewController {
             errorTitle = "Word not possible!"
             errorMessage = "You can't spell that word from \(title!.lowercased())"
         }
+        
+        let ac = UIAlertController(title: errorTitle, message: errorMessage, preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "OK", style: .default))
     }
     
     func isPossible(word: String) -> Bool {
