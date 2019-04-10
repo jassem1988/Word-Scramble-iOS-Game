@@ -71,13 +71,18 @@ class ViewController: UITableViewController {
         if isPossible(word: lowerAnswer) {
             if isOriginal(word: lowerAnswer) {
                 if isReal(word: lowerAnswer) {
-                    if lowerAnswer.count > 3 {
+                    if lowerAnswer.count >= 3 {
                         usedWords.insert(answer, at: 0)
                         
-                        let indexPath = IndexPath(row: 0, section: 0)
-                        tableView.insertRows(at: [indexPath], with: .automatic)
-                        
-                        return
+                        if lowerAnswer != title!.lowercased() {
+                            let indexPath = IndexPath(row: 0, section: 0)
+                            tableView.insertRows(at: [indexPath], with: .automatic)
+                            
+                            return
+                        } else {
+                            errorTitle = "Word is already in title"
+                            errorMessage = "The word is same as the start word"
+                        }
                     } else {
                         errorTitle = "Word is too short"
                         errorMessage = "Try a word with atleast three letters"
