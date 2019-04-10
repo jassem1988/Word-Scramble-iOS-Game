@@ -74,9 +74,20 @@ class ViewController: UITableViewController {
                     usedWords.insert(answer, at: 0)
                     
                     let indexPath = IndexPath(row: 0, section: 0)
-                    tableView.insertRows(at: [indexPath], with: .automatic) 
+                    tableView.insertRows(at: [indexPath], with: .automatic)
+                    
+                    return
+                } else {
+                    errorTitle = "Word not recognizeds!"
+                    errorMessage = "You can't just make them up, you know!"
                 }
+            } else {
+                errorTitle = "Word already used!"
+                errorMessage = "Be more original!"
             }
+        } else {
+            errorTitle = "Word not possible!"
+            errorMessage = "You can't spell that word from \(title!.lowercased())"
         }
     }
     
