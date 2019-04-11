@@ -132,8 +132,8 @@ class ViewController: UITableViewController {
     func isReal(word: String) -> Bool {
         let checker = UITextChecker()
         let range = NSRange(location: 0, length: word.utf16.count) //utf16 used from  objc lang
-        let missplledRange = checker.rangeOfMisspelledWord(in: word, range: range, startingAt: 0, wrap: false, language: "en")
-        return missplledRange.location == NSNotFound
+        let misspelledRange = checker.rangeOfMisspelledWord(in: word, range: range, startingAt: 0, wrap: false, language: "en")
+        return misspelledRange.location == NSNotFound
     }
     
     func showErrorMessage(_ errorTitle: String, _ errorMessage: String) {
